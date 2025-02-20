@@ -1,35 +1,84 @@
-/* Sky Blue Theme for Wordora */
+/* Normalize CSS */
+html {
+    font-size: 62.5%;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
 
-body
-  font-family: Arial, sans-serif
-  background-color: #e0f7ff
-  margin: 0
-  padding: 0
-  text-align: center
+body {
+    margin: 0;
+    background: #f0f8ff; /* Light sky blue background */
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+}
 
-header
-  background-color: #0099cc
-  color: white
-  padding: 20px
-  font-size: 24px
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 600;
+    color: #1c3961; /* Darker sky blue for headings */
+}
 
-nav
-  background: #0077aa
-  padding: 10px
+p {
+    margin: 0;
+    line-height: 1.6;
+}
 
-nav a
-  color: white
-  text-decoration: none
-  margin: 15px
-  font-size: 18px
+/* Navigation */
+nav {
+    background: #87ceeb; /* Sky blue */
+    padding: 1rem;
+    text-align: center;
+}
 
-.container
-  padding: 30px
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.8rem;
+}
 
-footer
-  background-color: #0099cc
-  color: white
-  padding: 15px
-  position: absolute
-  bottom: 0
-  width: 100%
+nav a:hover {
+    color: #1c3961; /* Darker sky blue */
+}
+
+/* Container */
+.container {
+    max-width: 1170px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 3.6rem;
+    margin-bottom: 1rem;
+}
+
+.container p {
+    font-size: 1.6rem;
+}
+
+/* Header */
+header {
+    background: #1c3961; /* Darker sky blue */
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2.4rem;
+}
+
+/* Footer */
+footer {
+    background: #1c3961; /* Darker sky blue */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
