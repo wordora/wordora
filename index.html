@@ -3,64 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordora - Imagination Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e0f7ff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #0099cc;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-        }
-        nav {
-            background: #0077aa;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 15px;
-            font-size: 18px;
-        }
-        .container {
-            padding: 30px;
-        }
-        footer {
-            background-color: #0099cc;
-            color: white;
-            padding: 15px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>Wordora - Educational Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page-style.css">
 </head>
 <body>
 
-    <header>
-        Welcome to Wordora - Imagination Hub
+    <!-- Header Section -->
+    <header class="top-header">
+        <div class="container">
+            <h1>Welcome to Wordora</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Stories</a>
-        <a href="#">Grammar</a>
-        <a href="#">Contact</a>
-    </nav>
+    <!-- Hero Section -->
+    <section class="banner">
+        <div class="container">
+            <h2>Learn & Grow with Wordora</h2>
+            <p>Your go-to platform for quality education and learning.</p>
+            <a href="#" class="read-more-btn">Get Started</a>
+        </div>
+    </section>
 
-    <div class="container">
-        <h1>Hello, I'm Rafan!</h1>
-        <p>Welcome to Wordora, where imagination comes to life.</p>
-    </div>
+    <!-- Courses Section -->
+    <section class="learn-courses">
+        <div class="container">
+            <h2>Our Popular Courses</h2>
+            <div class="course-listing-page">
+                <div class="grid-item">
+                    <div class="box-body">
+                        <h3>English Grammar</h3>
+                        <p>Master grammar rules and improve your writing skills.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="box-body">
+                        <h3>Creative Writing</h3>
+                        <p>Develop storytelling and composition skills.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="box-body">
+                        <h3>IELTS Preparation</h3>
+                        <p>Get ready for international English proficiency tests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        &copy; 2025 Wordora. All Rights Reserved.
+    <!-- Testimonials Section -->
+    <section class="testimonial-page">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <p>Read testimonials from successful learners.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="page-footer">
+        <div class="container">
+            <p>&copy; 2025 Wordora. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
