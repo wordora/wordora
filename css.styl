@@ -12,23 +12,35 @@ body {
     color: #333;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    font-weight: 600;
-    color: #1c3961; /* Darker sky blue for headings */
+/* Container */
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-p {
+/* Header */
+header {
+    background: #1c3961; /* Darker sky blue */
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+header h1 {
     margin: 0;
-    line-height: 1.6;
 }
 
 /* Navigation */
 nav {
     background: #87ceeb; /* Sky blue */
-    padding: 1rem;
-    text-align: center;
+    padding: 1rem 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
 }
 
 nav a {
@@ -42,33 +54,149 @@ nav a:hover {
     color: #1c3961; /* Darker sky blue */
 }
 
-/* Container */
-.container {
-    max-width: 1170px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+/* Hero Section */
+.hero {
+    background: #87ceeb; /* Sky blue */
+    color: #fff;
     text-align: center;
+    padding: 4rem 0;
 }
 
-.container h1 {
+.hero h2 {
     font-size: 3.6rem;
-    margin-bottom: 1rem;
+    margin: 0;
 }
 
-.container p {
+.hero p {
     font-size: 1.6rem;
 }
 
-/* Header */
-header {
+/* About Section */
+.about {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 3rem;
+    color: #1c3961; /* Darker sky blue */
+}
+
+.about p {
+    font-size: 1.6rem;
+    color: #333;
+    max-width: 800px;
+    margin: 1rem auto 0;
+}
+
+/* Stories Section */
+.stories {
+    background: #f0f8ff; /* Light sky blue background */
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.stories h2 {
+    font-size: 3rem;
+    color: #1c3961; /* Darker sky blue */
+}
+
+.stories .story {
+    background: #fff;
+    margin: 2rem 0;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.stories .story h3 {
+    font-size: 2.4rem;
+    color: #1c3961; /* Darker sky blue */
+}
+
+.stories .story p {
+    font-size: 1.6rem;
+    color: #333;
+}
+
+/* Grammar Section */
+.grammar {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.grammar h2 {
+    font-size: 3rem;
+    color: #1c3961; /* Darker sky blue */
+}
+
+.grammar ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.grammar li {
+    font-size: 1.6rem;
+    color: #333;
+    margin: 1rem 0;
+}
+
+/* Contact Section */
+.contact {
+    background: #f0f8ff; /* Light sky blue background */
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    color: #1c3961; /* Darker sky blue */
+}
+
+.contact p {
+    font-size: 1.6rem;
+    color: #333;
+    max-width: 800px;
+    margin: 1rem auto 2rem;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact label {
+    font-size: 1.4rem;
+    color: #333;
+    display: block;
+    margin: 1rem 0 0.5rem;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact button {
     background: #1c3961; /* Darker sky blue */
     color: #fff;
-    text-align: center;
-    padding: 2rem 0;
-    font-size: 2.4rem;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: #333;
 }
 
 /* Footer */
@@ -76,9 +204,6 @@ footer {
     background: #1c3961; /* Darker sky blue */
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
     font-size: 1.4rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
