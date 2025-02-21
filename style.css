@@ -1,8 +1,5 @@
-/* style.css */
-
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -49,7 +46,7 @@ nav ul li a:hover, nav ul li a.active {
     background-color: #5F9EA0;
 }
 
-nav ul li ul.dropdown-content {
+nav ul li ul {
     display: none;
     position: absolute;
     background-color: #87CEEB;
@@ -57,28 +54,11 @@ nav ul li ul.dropdown-content {
     top: 100%;
     left: 0;
     border-radius: 5px;
-    z-index: 1;
+    transition: all 0.3s ease;
 }
 
-nav ul li ul.dropdown-content li {
+nav ul li ul li {
     margin: 0;
-}
-
-nav ul li ul.dropdown-content a {
-    color: white;
-    background-color: #4682B4;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    display: block;
-    white-space: nowrap;
-}
-
-nav ul li ul.dropdown-content a:hover {
-    background-color: #5F9EA0;
-}
-
-nav ul li.show > ul.dropdown-content {
-    display: block;
 }
 
 main {
