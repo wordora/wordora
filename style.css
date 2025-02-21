@@ -1,4 +1,26 @@
-/* Existing styles... */
+/* style.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+    color: #333;
+}
+
+header {
+    background-color: #87CEEB;
+    color: white;
+    padding: 1.5em;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
 
 nav ul {
     list-style-type: none;
@@ -57,4 +79,32 @@ nav ul li ul.dropdown-content a:hover {
 
 nav ul li.show > ul.dropdown-content {
     display: block;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h2 {
+    color: #333;
+    font-size: 2em;
+    border-bottom: 2px solid #87CEEB;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 1em;
+    font-size: 1em;
 }
