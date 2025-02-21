@@ -1,39 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const toggleSubmenuLinks = document.querySelectorAll('.toggle-submenu');
     const dropdowns = document.querySelectorAll('.dropdown');
 
-    toggleSubmenuLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault(); // Stop direct navigation
+    dropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('.dropbtn');
+        const menu = dropdown.querySelector('.dropdown-content');
 
-            const submenu = this.nextElementSibling;
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const isOpen = dropdown.classList.contains('show');
 
-            // If submenu is already open, close it; otherwise, open it
-            if (submenu.style.display === 'block') {
-                submenu.style.display = 'none';
-            } else {
-                // Hide all other open submenus
-                dropdowns.forEach(menu => {
-                    menu.style.display = 'none';
-                });
-                submenu.style.display = 'block';
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+
+            // Toggle the current dropdown
+            if (!isOpen) {
+                dropdown.classList.add('show');
             }
         });
     });
 
-    // Hide submenu if clicked outside
+    // Close dropdowns if clicking outside
     document.addEventListener('click', function (e) {
-        if (!e.target.closest('nav')) {
-            dropdowns.forEach(menu => {
-                menu.style.display = 'none';
-            });
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
         }
-    });
-
-    // Allow clicking submenu items to navigate
-    dropdowns.forEach(menu => {
-        menu.addEventListener('click', function (e) {
-            e.stopPropagation(); // Prevent submenu from closing when clicking inside it
-        });
     });
 });
