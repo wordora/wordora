@@ -1,29 +1,34 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', function () {
+    const toggleSubmenuLinks = document.querySelectorAll('.toggle-submenu');
     const dropdowns = document.querySelectorAll('.dropdown');
 
-    dropdowns.forEach(dropdown => {
-        const button = dropdown.querySelector('.dropbtn');
-        const menu = dropdown.querySelector('.dropdown-content');
-
-        button.addEventListener('click', function (e) {
+    toggleSubmenuLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            const isOpen = dropdown.classList.contains('show');
+            const submenu = this.nextElementSibling;
 
-            // Close all dropdowns
-            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+            // Hide all other open submenus
+            dropdowns.forEach(menu => {
+                if (menu !== submenu) {
+                    menu.style.display = 'none';
+                }
+            });
 
-            // Toggle the current dropdown
-            if (!isOpen) {
-                dropdown.classList.add('show');
-            }
+            // Toggle the clicked submenu
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            this.classList.toggle('active');
         });
     });
 
-    // Close dropdowns if clicking outside
+    // Hide submenu if clicked outside
     document.addEventListener('click', function (e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelector
-::contentReference[oaicite:0]{index=0}
- 
+        if (!e.target.closest('nav')) {
+            dropdowns.forEach(menu => {
+                menu.style.display = 'none';
+            });
+            toggleSubmenuLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+        }
+    });
+});
