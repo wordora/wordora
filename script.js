@@ -1,33 +1,47 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleSubmenuLinks = document.querySelectorAll('.toggle-submenu');
-    const dropdowns = document.querySelectorAll('.dropdown');
+document.addEventListener("DOMContentLoaded", function () {
+    const menuItems = document.querySelectorAll(".menu-item");
 
-    toggleSubmenuLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const submenu = this.nextElementSibling;
+    menuItems.forEach(item => {
+        const button = item.querySelector(".toggle-submenu");
+        const submenu = item.querySelector(".dropdown");
 
-            // Hide all other open submenus
-            dropdowns.forEach(menu => {
-                if (menu !== submenu) {
-                    menu.style.display = 'none';
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Close all other menus
+            menuItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove("active");
                 }
             });
 
-            // Toggle the clicked submenu
-            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-            this.classList.toggle('active');
+            // Toggle the clicked menu
+            item.classList.toggle("active");
         });
     });
 
-    // Hide submenu if clicked outside
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('nav')) {
-            dropdowns.forEach(menu => {
-                menu.style.display = 'none';
+    // Hide menus when clicking outside
+    document.addEventListener("click", function (event) {
+        let isClickInside = false;
+
+        menuItems.forEach(item => {
+            if (item.contains(event.target)) {
+                isClickInside = true;
+            }
+        });
+
+        if (!isClickInside) {
+            menuItems.forEach(item => {
+                item.classList.remove("active");
             });
-            toggleSubmenuLinks.forEach(link => {
-                link.classList.remove('active');
+        }
+    });
+
+    // Keyboard Accessibility (Pressing "Escape" closes the menu)
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            menuItems.forEach(item => {
+                item.classList.remove("active");
             });
         }
     });
