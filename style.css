@@ -1,209 +1,92 @@
-/* Normalize CSS */
-html {
-    font-size: 62.5%;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-}
-
 body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    background: #f0f8ff; /* Light sky blue background */
-    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
     color: #333;
 }
 
-/* Container */
-.container {
-    max-width: 1170px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-/* Header */
 header {
-    background: #1c3961; /* Darker sky blue */
-    color: #fff;
-    padding: 2rem 0;
+    background-color: #87CEEB;
+    color: white;
+    padding: 1.5em;
     text-align: center;
-    font-size: 2.4rem;
 }
 
 header h1 {
     margin: 0;
+    font-size: 2.5em;
 }
 
-/* Navigation */
-nav {
-    background: #87ceeb; /* Sky blue */
-    padding: 1rem 0;
-}
-
-nav .container {
-    display: flex;
-    justify-content: center;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1.8rem;
-}
-
-nav a:hover {
-    color: #1c3961; /* Darker sky blue */
-}
-
-/* Hero Section */
-.hero {
-    background: #87ceeb; /* Sky blue */
-    color: #fff;
-    text-align: center;
-    padding: 4rem 0;
-}
-
-.hero h2 {
-    font-size: 3.6rem;
-    margin: 0;
-}
-
-.hero p {
-    font-size: 1.6rem;
-}
-
-/* About Section */
-.about {
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 3rem;
-    color: #1c3961; /* Darker sky blue */
-}
-
-.about p {
-    font-size: 1.6rem;
-    color: #333;
-    max-width: 800px;
-    margin: 1rem auto 0;
-}
-
-/* Stories Section */
-.stories {
-    background: #f0f8ff; /* Light sky blue background */
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.stories h2 {
-    font-size: 3rem;
-    color: #1c3961; /* Darker sky blue */
-}
-
-.stories .story {
-    background: #fff;
-    margin: 2rem 0;
-    padding: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.stories .story h3 {
-    font-size: 2.4rem;
-    color: #1c3961; /* Darker sky blue */
-}
-
-.stories .story p {
-    font-size: 1.6rem;
-    color: #333;
-}
-
-/* Grammar Section */
-.grammar {
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.grammar h2 {
-    font-size: 3rem;
-    color: #1c3961; /* Darker sky blue */
-}
-
-.grammar ul {
+nav ul {
     list-style-type: none;
     padding: 0;
-    max-width: 800px;
-    margin: 2rem auto 0;
+    margin: 1em 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.grammar li {
-    font-size: 1.6rem;
-    color: #333;
-    margin: 1rem 0;
+nav ul li {
+    margin: 0.5em;
+    position: relative;
 }
 
-/* Contact Section */
-.contact {
-    background: #f0f8ff; /* Light sky blue background */
-    padding: 4rem 0;
-    text-align: center;
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #4682B4;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.contact h2 {
-    font-size: 3rem;
-    color: #1c3961; /* Darker sky blue */
+nav ul li a:hover {
+    background-color: #5F9EA0;
 }
 
-.contact p {
-    font-size: 1.6rem;
-    color: #333;
-    max-width: 800px;
-    margin: 1rem auto 2rem;
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #87CEEB;
+    padding: 0.5em;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
 }
 
-.contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.contact label {
-    font-size: 1.4rem;
-    color: #333;
+nav ul li:hover ul {
     display: block;
-    margin: 1rem 0 0.5rem;
 }
 
-.contact input,
-.contact textarea {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+main {
+    padding: 2em;
 }
 
-.contact button {
-    background: #1c3961; /* Darker sky blue */
-    color: #fff;
-    padding: 1rem 2rem;
-    font-size: 1.6rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+section {
+    margin-bottom: 2em;
 }
 
-.contact button:hover {
-    background: #333;
+h2 {
+    color: #333;
+    font-size: 2em;
+    border-bottom: 2px solid #87CEEB;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
-/* Footer */
+p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
 footer {
-    background: #1c3961; /* Darker sky blue */
-    color: #fff;
+    background-color: #f1f1f1;
     text-align: center;
-    padding: 2rem 0;
-    font-size: 1.4rem;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 1em;
 }
