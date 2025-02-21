@@ -1,48 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const menuItems = document.querySelectorAll(".menu-item");
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleSubmenuLinks = document.querySelectorAll('.toggle-submenu');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-    menuItems.forEach(item => {
-        const button = item.querySelector(".toggle-submenu");
-        const submenu = item.querySelector(".dropdown");
+    toggleSubmenuLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent the default link behavior
 
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
+            const submenu = this.nextElementSibling;
 
-            // Close all other menus
-            menuItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove("active");
-                }
+            // Check if the submenu is already visible
+            const isVisible = submenu.style.display === 'block';
+
+            // Hide all other open submenus
+            dropdowns.forEach(menu => {
+                menu.style.display = 'none';
             });
 
-            // Toggle the clicked menu
-            item.classList.toggle("active");
-        });
-    });
+            toggleSubmenuLinks.forEach(link => {
+                link.classList.remove('active');
+            });
 
-    // Hide menus when clicking outside
-    document.addEventListener("click", function (event) {
-        let isClickInside = false;
-
-        menuItems.forEach(item => {
-            if (item.contains(event.target)) {
-                isClickInside = true;
+            // Toggle the clicked submenu
+            if (!isVisible) {
+                submenu.style.display = 'block';
+                this.classList.add('active');
             }
         });
+    });
 
-        if (!isClickInside) {
-            menuItems.forEach(item => {
-                item.classList.remove("active");
+    // Hide submenu if clicked outside
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('nav')) {
+            dropdowns.forEach(menu => {
+                menu.style.display = 'none';
+            });
+            toggleSubmenuLinks.forEach(link => {
+                link.classList.remove('active');
             });
         }
     });
 
-    // Keyboard Accessibility (Pressing "Escape" closes the menu)
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            menuItems.forEach(item => {
-                item.classList.remove("active");
-            });
-        }
+    // Ensure submenus are hidden on page load
+    dropdowns.forEach(menu => {
+        menu.style.display = 'none';
     });
 });
