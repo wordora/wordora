@@ -42,7 +42,7 @@ nav ul li a {
     transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a.active {
     background-color: #5F9EA0;
 }
 
@@ -57,8 +57,8 @@ nav ul li ul {
     transition: all 3s ease;
 }
 
-nav ul li:hover ul {
-    display: block;
+nav ul li ul li {
+    margin: 0;
 }
 
 main {
