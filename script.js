@@ -1,3 +1,5 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', function () {
     const dropdowns = document.querySelectorAll('.dropdown');
 
@@ -22,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Close dropdowns if clicking outside
     document.addEventListener('click', function (e) {
         if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
-        }
-    });
-});
+            document.querySelector
+::contentReference[oaicite:0]{index=0}
+ 
