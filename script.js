@@ -4,26 +4,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     toggleSubmenuLinks.forEach(link => {
         link.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent the default link behavior
+            e.preventDefault(); // Stop direct navigation
 
             const submenu = this.nextElementSibling;
 
-            // Check if the submenu is already visible
-            const isVisible = submenu.style.display === 'block';
-
-            // Hide all other open submenus
-            dropdowns.forEach(menu => {
-                menu.style.display = 'none';
-            });
-
-            toggleSubmenuLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-
-            // Toggle the clicked submenu
-            if (!isVisible) {
+            // If submenu is already open, close it; otherwise, open it
+            if (submenu.style.display === 'block') {
+                submenu.style.display = 'none';
+            } else {
+                // Hide all other open submenus
+                dropdowns.forEach(menu => {
+                    menu.style.display = 'none';
+                });
                 submenu.style.display = 'block';
-                this.classList.add('active');
             }
         });
     });
@@ -34,14 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
             dropdowns.forEach(menu => {
                 menu.style.display = 'none';
             });
-            toggleSubmenuLinks.forEach(link => {
-                link.classList.remove('active');
-            });
         }
     });
 
-    // Ensure submenus are hidden on page load
+    // Allow clicking submenu items to navigate
     dropdowns.forEach(menu => {
-        menu.style.display = 'none';
+        menu.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent submenu from closing when clicking inside it
+        });
     });
 });
