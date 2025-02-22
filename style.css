@@ -28,19 +28,19 @@ nav {
     padding: 10px 0;
 }
 
-nav ul {
+.menu {
     display: flex;
     justify-content: center;
     position: relative;
 }
 
-nav ul li {
+.menu li {
     position: relative;
     margin: 0 15px;
 }
 
 /* Main Navigation Links */
-nav ul li a {
+.menu li a {
     color: white;
     padding: 10px 15px;
     display: block;
@@ -49,7 +49,7 @@ nav ul li a {
     cursor: pointer;
 }
 
-nav ul li a:hover {
+.menu li a:hover {
     background: #1e3a8a;
     border-radius: 5px;
 }
