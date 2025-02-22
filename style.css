@@ -1,3 +1,4 @@
+
 /* General Reset */
 body, h1, h2, h3, p, ul, li, a {
     margin: 0;
@@ -31,7 +32,6 @@ nav {
 nav ul {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -52,7 +52,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Dropdown Menus */
+/* Dropdown */
 .dropdown {
     display: none;
     position: absolute;
@@ -63,7 +63,6 @@ nav ul li a:hover {
     text-align: left;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 999;
 }
 
 .dropdown li {
@@ -80,9 +79,15 @@ nav ul li a:hover {
     border-radius: 0;
 }
 
-/* Ensure dropdown menus stay visible on hover */
-nav ul li:hover .dropdown {
+/* Show dropdown on hover */
+.menu-item:hover .dropdown {
     display: block;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
 }
 
 /* Footer */
