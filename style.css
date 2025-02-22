@@ -29,8 +29,8 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0.5em;
     position: relative;
+    margin: 0.5em;
 }
 
 nav ul li a {
@@ -40,6 +40,7 @@ nav ul li a {
     padding: 0.5em 1em;
     border-radius: 5px;
     transition: background-color 0.3s;
+    display: block;
 }
 
 nav ul li a:hover, nav ul li a.active {
@@ -49,43 +50,32 @@ nav ul li a:hover, nav ul li a.active {
 nav ul li ul {
     display: none;
     position: absolute;
-    background-color: #87CEEB;
-    padding: 0.5em;
+    background-color: #4682B4;
+    padding: 0;
     top: 100%;
     left: 0;
     border-radius: 5px;
-    transition: all 0.3s ease;
-    z-index: 1000;  /* Ensure dropdown appears above other content */
+    min-width: 180px;
+    z-index: 1000;
 }
 
 nav ul li ul li {
-    margin: 0;
+    width: 100%;
 }
 
-main {
-    padding: 2em;
+nav ul li ul li a {
+    padding: 10px;
+    background: #286090;
+    display: block;
+    white-space: nowrap;
+    border-radius: 0;
 }
 
-section {
-    margin-bottom: 2em;
+nav ul li ul li a:hover {
+    background: #5F9EA0;
 }
 
-h2 {
-    color: #333;
-    font-size: 2em;
-    border-bottom: 2px solid #87CEEB;
-    padding-bottom: 0.5em;
-    margin-bottom: 1em;
-}
-
-p {
-    font-size: 1.2em;
-    line-height: 1.6em;
-}
-
-footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 1em;
-    font-size: 1em;
+/* Show dropdown on hover */
+nav ul li.has-dropdown:hover > ul {
+    display: block;
 }
