@@ -31,6 +31,7 @@ nav {
 nav ul {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 nav ul li {
@@ -51,7 +52,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Dropdown */
+/* Dropdown Menus */
 .dropdown {
     display: none;
     position: absolute;
@@ -62,6 +63,7 @@ nav ul li a:hover {
     text-align: left;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Keeps it above other content */
 }
 
 .dropdown li {
@@ -71,11 +73,18 @@ nav ul li a:hover {
 .dropdown li a {
     padding: 10px;
     display: block;
+    color: white;
+    font-size: 16px;
 }
 
 .dropdown li a:hover {
     background: #1e3a8a;
     border-radius: 0;
+}
+
+/* Ensure submenus stay open on hover */
+nav ul li:hover > .dropdown {
+    display: block;
 }
 
 /* Footer */
