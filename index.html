@@ -5,11 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imagination Hub</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
     <header>
         <h1>Imagination Hub</h1>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="paragraphs.html">Paragraph</a></li>
+                <li><a href="emails.html">Email</a></li>
+                <li><a href="compositions.html">Compositions</a></li>
+                <li><a href="dialogues.html">Dialogues</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </nav>
+
+        <!-- Hidden Dropdown Menu -->
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="letters.html">Letters</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="imagine-stories.html">Imaginative Stories</a></li>
+            <li><a href="mixed-stories.html">Mixed Stories</a></li>
+            <li><a href="kids-stories.html">Kids Stories</a></li>
+            <li><a href="imagine-stories.html">Imagine Stories</a></li>
+            <li><a href="for-friends.html">For Friends</a></li>
+        </ul>
     </header>
 
     <main>
