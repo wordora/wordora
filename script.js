@@ -1,29 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuItems = document.querySelectorAll(".toggle-submenu");
+    let menuItems = document.querySelectorAll(".menu-item");
 
     menuItems.forEach(item => {
         item.addEventListener("click", function (e) {
-            e.preventDefault();
-            
-            // Close all other dropdowns before opening the clicked one
-            document.querySelectorAll(".dropdown").forEach(menu => {
-                if (menu !== this.nextElementSibling) {
-                    menu.style.display = "none";
+            e.stopPropagation(); // Stop clicks from affecting other elements
+
+            // Hide all dropdowns except the clicked one
+            document.querySelectorAll(".dropdown").forEach(dropdown => {
+                if (dropdown !== item.querySelector(".dropdown")) {
+                    dropdown.style.display = "none";
                 }
             });
 
             // Toggle dropdown visibility
-            let dropdown = this.nextElementSibling;
-            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+            let dropdown = item.querySelector(".dropdown");
+            if (dropdown) {
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            }
         });
     });
 
-    // Hide dropdown when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!event.target.closest("nav")) {
-            document.querySelectorAll(".dropdown").forEach(menu => {
-                menu.style.display = "none";
-            });
-        }
+    // Hide dropdowns when clicking outside
+    document.addEventListener("click", function () {
+        document.querySelectorAll(".dropdown").forEach(dropdown => {
+            dropdown.style.display = "none";
+        });
     });
 });
