@@ -1,41 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const toggleSubmenuLinks = document.querySelectorAll('.toggle-submenu');
-    const dropdowns = document.querySelectorAll('.dropdown');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const dropdownMenu = document.getElementById('dropdown-menu');
 
-    toggleSubmenuLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const submenu = this.nextElementSibling;
-
-            // Hide all other open submenus
-            dropdowns.forEach(menu => {
-                if (menu !== submenu) {
-                    menu.style.display = 'none';
-                }
-            });
-
-            // Toggle the clicked submenu
-            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-            this.classList.toggle('active');
-        });
+    hamburgerIcon.addEventListener('click', function (e) {
+        e.preventDefault();
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Hide submenu if clicked outside
+    // Hide dropdown menu if clicked outside
     document.addEventListener('click', function (e) {
         if (!e.target.closest('nav')) {
-            dropdowns.forEach(menu => {
-                menu.style.display = 'none';
-            });
-            toggleSubmenuLinks.forEach(link => {
-                link.classList.remove('active');
-            });
+            dropdownMenu.style.display = 'none';
         }
     });
 
-    // Prevent hiding submenu when clicking inside
-    dropdowns.forEach(menu => {
-        menu.addEventListener('click', function (e) {
-            e.stopPropagation();
-        });
+    // Prevent hiding dropdown menu when clicking inside
+    dropdownMenu.addEventListener('click', function (e) {
+        e.stopPropagation();
     });
 });
