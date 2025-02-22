@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, h2, p, ul, li, a {
+body, h1, h2, p {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -20,84 +20,17 @@ header {
     text-align: center;
 }
 
-/* Navigation */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: #2563eb;
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
 }
 
-/* Main Menu (Horizontal) */
-.menu {
-    display: flex;
-}
-
-.menu li {
-    margin: 0 15px;
-}
-
-.menu li a {
+/* Footer */
+footer {
+    background: #1e40af;
     color: white;
-    font-size: 18px;
-    padding: 10px 15px;
-    display: block;
-    transition: 0.3s;
-}
-
-.menu li a:hover {
-    background: #1e3a8a;
-    border-radius: 5px;
-}
-
-/* Hamburger Icon */
-.hamburger {
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-    display: none; /* Hide by default on large screens */
-}
-
-/* Dropdown Menu (Hidden by Default) */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    right: 20px;
-    top: 60px;
-    background: #3b82f6;
-    width: 200px;
-    text-align: left;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-menu li {
+    text-align: center;
     padding: 10px;
-}
-
-.dropdown-menu li a {
-    display: block;
-    color: white;
-    font-size: 16px;
-}
-
-.dropdown-menu li a:hover {
-    background: #1e3a8a;
-}
-
-/* Show Dropdown */
-.dropdown-menu.show {
-    display: block;
-}
-
-/* Responsive: Show Hamburger Menu on Mobile */
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
+    margin-top: 20px;
 }
