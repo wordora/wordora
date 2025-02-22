@@ -1,20 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Get all dropdown menu triggers
-    const menuItems = document.querySelectorAll("nav ul li");
+    const toggles = document.querySelectorAll(".toggle-submenu");
 
-    menuItems.forEach(item => {
-        item.addEventListener("mouseover", function () {
-            let submenu = this.querySelector("ul");
-            if (submenu) {
-                submenu.style.display = "block";
-            }
-        });
+    toggles.forEach((toggle) => {
+        toggle.addEventListener("click", function (event) {
+            event.preventDefault();
 
-        item.addEventListener("mouseleave", function () {
-            let submenu = this.querySelector("ul");
-            if (submenu) {
-                submenu.style.display = "none";
-            }
+            // Close all dropdowns first
+            document.querySelectorAll(".dropdown").forEach((dropdown) => {
+                if (dropdown !== this.nextElementSibling) {
+                    dropdown.style.display = "none";
+                }
+            });
+
+            // Toggle the clicked one
+            const submenu = this.nextElementSibling;
+            submenu.style.display =
+                submenu.style.display === "block" ? "none" : "block";
         });
+    });
+
+    // Close menu when clicking anywhere else
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest("nav")) {
+            document.querySelectorAll(".dropdown").forEach((dropdown) => {
+                dropdown.style.display = "none";
+            });
+        }
     });
 });
