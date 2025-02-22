@@ -8,13 +8,13 @@ body, h1, h2, h3, p, ul, li, a {
 }
 
 body {
-    background-color: #dbeafe;
+    background-color: #dbeafe; /* Light Sky Blue */
     color: #333;
 }
 
 /* Header */
 header {
-    background: #1e40af;
+    background: #1e40af; /* Dark Sky Blue */
     color: white;
     padding: 15px;
     text-align: center;
@@ -24,33 +24,31 @@ header {
 
 /* Navigation */
 nav {
-    background: #2563eb;
+    background: #2563eb; /* Mid Sky Blue */
     padding: 10px 0;
 }
 
-.menu {
+nav ul {
     display: flex;
     justify-content: center;
-    position: relative;
+    flex-wrap: wrap;
 }
 
-.menu li {
+nav ul li {
     position: relative;
     margin: 0 15px;
 }
 
-/* Main Navigation Links */
-.menu li a {
+nav ul li a {
     color: white;
     padding: 10px 15px;
     display: block;
     font-size: 18px;
     transition: 0.3s;
-    cursor: pointer;
 }
 
-.menu li a:hover {
-    background: #1e3a8a;
+nav ul li a:hover {
+    background: #1e3a8a; /* Darker Blue */
     border-radius: 5px;
 }
 
@@ -58,19 +56,33 @@ nav {
 .dropdown {
     display: none;
     position: absolute;
-    background: #3b82f6;
+    background: #3b82f6; /* Lighter Blue */
     top: 40px;
     left: 0;
     width: 200px;
     text-align: left;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: 999;
 }
 
-/* Show active dropdowns */
-.dropdown.active {
-    display: block !important;
+.dropdown li {
+    display: block;
+}
+
+.dropdown li a {
+    padding: 10px;
+    display: block;
+}
+
+.dropdown li a:hover {
+    background: #1e3a8a;
+    border-radius: 0;
+}
+
+/* Ensure dropdown menus stay visible on hover */
+nav ul li:hover .dropdown {
+    display: block;
 }
 
 /* Footer */
