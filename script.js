@@ -1,30 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const dropdownToggles = document.querySelectorAll(".toggle-submenu");
+    const menuItems = document.querySelectorAll(".toggle-submenu");
 
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            // Close all other dropdowns
+    menuItems.forEach(item => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
+            
+            // Close all other dropdowns before opening the clicked one
             document.querySelectorAll(".dropdown").forEach(menu => {
                 if (menu !== this.nextElementSibling) {
-                    menu.classList.remove("active");
+                    menu.style.display = "none";
                 }
             });
 
-            // Toggle clicked dropdown
-            const submenu = this.nextElementSibling;
-            if (submenu) {
-                submenu.classList.toggle("active");
-            }
+            // Toggle dropdown visibility
+            let dropdown = this.nextElementSibling;
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
         });
     });
 
-    // Close menus when clicking outside
+    // Hide dropdown when clicking outside
     document.addEventListener("click", function (event) {
         if (!event.target.closest("nav")) {
             document.querySelectorAll(".dropdown").forEach(menu => {
-                menu.classList.remove("active");
+                menu.style.display = "none";
             });
         }
     });
