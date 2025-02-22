@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Reset default styles */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
@@ -6,27 +6,36 @@ body, h1, h2, p, ul, li {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light sky blue background */
     color: #333;
 }
 
-/* Header and navigation styles */
+/* Header styles */
 header {
-    background: #333;
+    background: #007BFF; /* Sky blue header */
     color: white;
     padding: 15px 0;
     text-align: center;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Navigation bar */
+nav {
+    background: #0056b3; /* Darker blue */
+    padding: 10px 0;
+}
+
 nav ul {
-    background: #444;
-    padding: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline-block;
     position: relative;
 }
 
@@ -35,56 +44,72 @@ nav ul li a {
     color: white;
     text-decoration: none;
     padding: 12px 20px;
+    font-size: 16px;
 }
 
 nav ul li a:hover {
-    background: #555;
+    background: #004494; /* Slightly darker blue */
 }
 
 /* Dropdown menu styles */
-.submenu {
+nav ul li ul {
     display: none;
     position: absolute;
-    background: #444;
-    min-width: 160px;
+    background: #007BFF;
+    min-width: 180px;
     top: 100%;
     left: 0;
     z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.submenu li {
+nav ul li:hover ul {
     display: block;
 }
 
-.submenu li a {
+nav ul li ul li {
+    display: block;
+}
+
+nav ul li ul li a {
     display: block;
     padding: 10px 15px;
     color: white;
     text-decoration: none;
+    font-size: 14px;
 }
 
-.submenu li a:hover {
-    background: #666;
+nav ul li ul li a:hover {
+    background: #0056b3;
 }
 
-/* Show dropdown when active */
-.submenu.show {
-    display: block;
+/* Main content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
     nav ul {
-        display: block;
+        flex-direction: column;
         text-align: left;
     }
 
     nav ul li {
-        display: block;
         width: 100%;
     }
 
-    .submenu {
+    nav ul li ul {
         position: relative;
         width: 100%;
     }
