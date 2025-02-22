@@ -1,39 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const toggles = document.querySelectorAll(".toggle-submenu");
+    // Select all menu items with submenus
+    const dropdownToggles = document.querySelectorAll(".toggle-submenu");
 
-    toggles.forEach((toggle) => {
+    dropdownToggles.forEach(toggle => {
         toggle.addEventListener("click", function (event) {
-            event.preventDefault();
-            const submenu = this.nextElementSibling;
+            event.preventDefault(); // Prevent default link behavior
 
-            // Close all dropdowns except the one being clicked
-            document.querySelectorAll(".dropdown").forEach((dropdown) => {
-                if (dropdown !== submenu) {
-                    dropdown.style.display = "none";
+            // Close all open menus first
+            document.querySelectorAll(".dropdown").forEach(menu => {
+                if (menu !== this.nextElementSibling) {
+                    menu.classList.remove("active");
                 }
             });
 
-            // Toggle the clicked submenu
-            submenu.style.display =
-                submenu.style.display === "block" ? "none" : "block";
+            // Toggle the clicked menu
+            const submenu = this.nextElementSibling;
+            if (submenu) {
+                submenu.classList.toggle("active");
+            }
         });
     });
 
-    // Close menu when clicking outside
+    // Close menus when clicking outside
     document.addEventListener("click", function (event) {
         if (!event.target.closest("nav")) {
-            document.querySelectorAll(".dropdown").forEach((dropdown) => {
-                dropdown.style.display = "none";
+            document.querySelectorAll(".dropdown").forEach(menu => {
+                menu.classList.remove("active");
             });
         }
-    });
-
-    // Ensure dropdowns close when clicking another main menu item
-    document.querySelectorAll("nav > ul > li > a").forEach((menuItem) => {
-        menuItem.addEventListener("click", function () {
-            document.querySelectorAll(".dropdown").forEach((dropdown) => {
-                dropdown.style.display = "none";
-            });
-        });
     });
 });
