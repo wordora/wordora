@@ -1,29 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let menuItems = document.querySelectorAll(".menu-item");
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleSubmenuLinks = document.querySelectorAll('.toggle-submenu');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-    menuItems.forEach(item => {
-        item.addEventListener("click", function (e) {
-            e.stopPropagation(); // Stop clicks from affecting other elements
+    toggleSubmenuLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
 
-            // Hide all dropdowns except the clicked one
-            document.querySelectorAll(".dropdown").forEach(dropdown => {
-                if (dropdown !== item.querySelector(".dropdown")) {
-                    dropdown.style.display = "none";
+            // Hide all other open submenus
+            dropdowns.forEach(menu => {
+                if (menu !== submenu) {
+                    menu.style.display = 'none';
                 }
             });
 
-            // Toggle dropdown visibility
-            let dropdown = item.querySelector(".dropdown");
-            if (dropdown) {
-                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-            }
+            // Toggle the clicked submenu
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            this.classList.toggle('active');
         });
     });
 
-    // Hide dropdowns when clicking outside
-    document.addEventListener("click", function () {
-        document.querySelectorAll(".dropdown").forEach(dropdown => {
-            dropdown.style.display = "none";
+    // Hide submenu if clicked outside
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('nav')) {
+            dropdowns.forEach(menu => {
+                menu.style.display = 'none';
+            });
+            toggleSubmenuLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+        }
+    });
+
+    // Prevent hiding submenu when clicking inside
+    dropdowns.forEach(menu => {
+        menu.addEventListener('click', function (e) {
+            e.stopPropagation();
         });
     });
 });
