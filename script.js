@@ -31,4 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
+
+    // Prevent hiding submenu when clicking inside
+    dropdowns.forEach(menu => {
+        menu.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    });
 });
