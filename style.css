@@ -8,13 +8,13 @@ body, h1, h2, h3, p, ul, li, a {
 }
 
 body {
-    background-color: #dbeafe; /* Light Sky Blue */
+    background-color: #dbeafe;
     color: #333;
 }
 
 /* Header */
 header {
-    background: #1e40af; /* Dark Sky Blue */
+    background: #1e40af;
     color: white;
     padding: 15px;
     text-align: center;
@@ -24,7 +24,7 @@ header {
 
 /* Navigation */
 nav {
-    background: #2563eb; /* Mid Sky Blue */
+    background: #2563eb;
     padding: 10px 0;
 }
 
@@ -50,7 +50,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #1e3a8a; /* Darker Blue */
+    background: #1e3a8a;
     border-radius: 5px;
 }
 
@@ -58,34 +58,18 @@ nav ul li a:hover {
 .dropdown {
     display: none;
     position: absolute;
-    background: #3b82f6; /* Lighter Blue */
+    background: #3b82f6;
     top: 40px;
     left: 0;
     width: 200px;
     text-align: left;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Keeps it above other content */
+    z-index: 1000;
 }
 
-.dropdown li {
-    display: block;
-}
-
-.dropdown li a {
-    padding: 10px;
-    display: block;
-    color: white;
-    font-size: 16px;
-}
-
-/* Hover Fix */
-nav ul li:hover > .dropdown {
-    display: block;
-}
-
-/* Active Dropdown Fix */
-.active {
+/* Show active dropdowns */
+.dropdown.active {
     display: block !important;
 }
 
