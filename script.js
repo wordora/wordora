@@ -1,21 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const dropdownMenu = document.getElementById('dropdown-menu');
+function toggleMenu() {
+    let dropdown = document.getElementById("dropdownMenu");
+    dropdown.classList.toggle("show");
+}
 
-    hamburgerIcon.addEventListener('click', function (e) {
-        e.preventDefault();
-        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-    });
+// Close menu when clicking outside
+document.addEventListener("click", function (event) {
+    let dropdown = document.getElementById("dropdownMenu");
+    let hamburger = document.querySelector(".hamburger");
 
-    // Hide dropdown menu if clicked outside
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('nav')) {
-            dropdownMenu.style.display = 'none';
-        }
-    });
-
-    // Prevent hiding dropdown menu when clicking inside
-    dropdownMenu.addEventListener('click', function (e) {
-        e.stopPropagation();
-    });
+    if (!dropdown.contains(event.target) && !hamburger.contains(event.target)) {
+        dropdown.classList.remove("show");
+    }
 });
