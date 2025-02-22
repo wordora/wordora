@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Select all menu items with submenus
     const dropdownToggles = document.querySelectorAll(".toggle-submenu");
 
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default link behavior
+            event.preventDefault();
 
-            // Close all open menus first
+            // Close all other dropdowns
             document.querySelectorAll(".dropdown").forEach(menu => {
                 if (menu !== this.nextElementSibling) {
                     menu.classList.remove("active");
                 }
             });
 
-            // Toggle the clicked menu
+            // Toggle clicked dropdown
             const submenu = this.nextElementSibling;
             if (submenu) {
                 submenu.classList.toggle("active");
