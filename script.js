@@ -1,14 +1,17 @@
-function toggleMenu() {
+document.addEventListener("DOMContentLoaded", function () {
+    let hamburger = document.getElementById("hamburgerMenu");
     let dropdown = document.getElementById("dropdownMenu");
-    dropdown.classList.toggle("show");
-}
 
-// Close menu when clicking outside
-document.addEventListener("click", function (event) {
-    let dropdown = document.getElementById("dropdownMenu");
-    let hamburger = document.querySelector(".hamburger");
+    // ☰ Click Opens & Closes Dropdown
+    hamburger.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdown.classList.toggle("show");
+    });
 
-    if (!dropdown.contains(event.target) && !hamburger.contains(event.target)) {
-        dropdown.classList.remove("show");
-    }
+    // Clicking Outside Closes ☰ Menu
+    document.addEventListener("click", function (event) {
+        if (!dropdown.contains(event.target) && !hamburger.contains(event.target)) {
+            dropdown.classList.remove("show");
+        }
+    });
 });
