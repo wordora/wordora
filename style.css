@@ -58,7 +58,7 @@ header {
     font-size: 28px;
     cursor: pointer;
     color: white;
-    display: none; /* Hide hamburger icon by default */
+    display: block; /* Always show hamburger icon */
     position: absolute;
     top: 15px;
     right: 20px;
@@ -66,7 +66,7 @@ header {
 
 /* ☰ Vertical Dropdown Menu */
 .dropdown-menu {
-    display: none;
+    display: flex; /* Make sure menu is visible on mobile */
     position: absolute;
     right: 20px;
     top: 60px;
@@ -127,7 +127,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu {
-        display: none;
+        display: none; /* Hide main menu on small screens */
     }
 
     .hamburger {
@@ -136,5 +136,11 @@ footer {
 
     .dropdown-menu {
         top: 50px; /* Adjust position if needed */
+    }
+
+    /* Show dropdown menu on small screens */
+    .dropdown-menu.show {
+        display: flex;
+        flex-direction: column;
     }
 }
