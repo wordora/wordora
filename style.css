@@ -7,6 +7,7 @@ body, h1, h2, p, ul, li, a {
     font-family: Arial, sans-serif;
 }
 
+/* Body Styling */
 body {
     background-color: #dbeafe; /* Light Sky Blue */
     color: #333;
@@ -14,19 +15,19 @@ body {
 
 /* Header */
 header {
-    background: #1e40af;
+    background: #1e40af; /* Dark Blue */
     color: white;
     padding: 15px;
     text-align: center;
 }
 
-/* Navigation */
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: #2563eb;
+    background: #2563eb; /* Mid Blue */
 }
 
 /* Main Menu (Horizontal) */
@@ -47,30 +48,35 @@ header {
 }
 
 .menu li a:hover {
-    background: #1e3a8a;
+    background: #1e3a8a; /* Darker Blue */
     border-radius: 5px;
 }
 
-/* Hamburger Icon */
+/* ☰ Hamburger Icon */
 .hamburger {
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
     color: white;
-    display: none;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
 }
 
-/* Dropdown Menu */
+/* ☰ Vertical Dropdown Menu */
 .dropdown-menu {
     display: none;
     position: absolute;
     right: 20px;
     top: 60px;
     background: #3b82f6;
-    width: 220px;
+    width: 200px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* ☰ Dropdown Items */
 .dropdown-menu li {
     padding: 10px;
 }
@@ -83,14 +89,41 @@ header {
 
 .dropdown-menu li a:hover {
     background: #1e3a8a;
+    border-radius: 5px;
 }
 
-/* Show Dropdown */
+/* Show ☰ Menu */
 .dropdown-menu.show {
-    display: block;
+    display: flex;
 }
 
-/* Responsive: Show Hamburger Menu on Mobile */
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #1e40af;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background: #1e40af;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .menu {
         display: none;
