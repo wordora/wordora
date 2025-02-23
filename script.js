@@ -14,4 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
             dropdown.classList.remove("show");
         }
     });
+
+    // Close menu on window resize to ensure proper state
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+            dropdown.classList.remove("show");
+        }
+    });
 });
