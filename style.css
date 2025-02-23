@@ -28,6 +28,7 @@ header {
     align-items: center;
     padding: 10px 20px;
     background: #2563eb; /* Mid Blue */
+    position: relative;
 }
 
 /* Main Menu (Horizontal) */
@@ -57,7 +58,7 @@ header {
     font-size: 28px;
     cursor: pointer;
     color: white;
-    display: block;
+    display: none; /* Hide hamburger icon by default */
     position: absolute;
     top: 15px;
     right: 20px;
@@ -130,6 +131,10 @@ footer {
     }
 
     .hamburger {
-        display: block;
+        display: block; /* Show hamburger icon on small screens */
+    }
+
+    .dropdown-menu {
+        top: 50px; /* Adjust position if needed */
     }
 }
