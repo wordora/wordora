@@ -3,49 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paragraphs - Imagination Hub</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <title>Paragraphs</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 25%;
+            background: #fff;
+            padding: 20px;
+            border-right: 2px solid #ddd;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .content {
+            width: 75%;
+            padding: 20px;
+        }
+        .paragraph-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Imagination Hub</h1>
-        <nav class="navbar">
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="paragraphs.html">Paragraphs</a></li>
-                <li><a href="emails.html">Emails</a></li>
-                <li><a href="compositions.html">Compositions</a></li>
-                <li><a href="dialogues.html">Dialogues</a></li>
-                <li><a href="about-me.html">About Me</a></li>
-            </ul>
-            <div class="hamburger" id="hamburgerMenu">&#9776;</div>
-        </nav>
-        
-        <ul class="dropdown-menu" id="dropdownMenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="paragraphs.html">Paragraphs</a></li>
-            <li><a href="emails.html">Emails</a></li>
-            <li><a href="compositions.html">Compositions</a></li>
-            <li><a href="dialogues.html">Dialogues</a></li>
-            <li><a href="about-me.html">About Me</a></li>
-            <li><a href="letters.html">Letters</a></li>
-            <li><a href="applications.html">Applications</a></li>
-            <li><a href="mixed-stories.html">Mixed Stories</a></li>
-            <li><a href="kids-stories.html">Kids Stories</a></li>
-            <li><a href="imagine-story.html">Imagine Story</a></li>
-            <li><a href="completing-stories.html">Completing Stories</a></li>
-            <li><a href="for-friends.html">For Friends</a></li>
-        </ul>
-    </header>
+    <div class="sidebar">
+        <h2>Paragraph List</h2>
+        <a href="#book-fair">A Book Fair You Visited</a>
+        <a href="#moonlit-night">A Moonlit Night</a>
+    </div>
+    
+    <div class="content">
+        <div id="book-fair" class="paragraph-box">
+            <h2>A Book Fair You Visited (150 Words)</h2>
+            <p>Last week, I visited a book fair with my friends. It was held in a large open field...</p>
+        </div>
+        <div class="paragraph-box">
+            <h2>A Book Fair You Visited (200 Words)</h2>
+            <p>Last month, I visited a book fair with my family. It was held in a big ground...</p>
+        </div>
+        <div class="paragraph-box">
+            <h2>A Book Fair You Visited (250 Words)</h2>
+            <p>Last Sunday, I visited a book fair with my best friend. It was held in a big field near our town...</p>
+        </div>
 
-    <main>
-        <h2>Challenge Yourself</h2>
-        <p>Write paragraphs and pass in the exam.</p>
-    </main>
-
-    <footer>
-        &copy; 2025 Imagination Hub. All rights reserved.
-    </footer>
+        <div id="moonlit-night" class="paragraph-box">
+            <h2>A Moonlit Night (150 Words)</h2>
+            <p>A moonlit night is a beautiful sight. The moon shines brightly, making the land look silver...</p>
+        </div>
+        <div class="paragraph-box">
+            <h2>A Moonlit Night (200 Words)</h2>
+            <p>A moonlit night is a wonderful and peaceful time. The moon shines brightly in the sky...</p>
+        </div>
+        <div class="paragraph-box">
+            <h2>A Moonlit Night (250 Words)</h2>
+            <p>A moonlit night is one of the most beautiful sights in nature. When the moon shines brightly...</p>
+        </div>
+    </div>
 </body>
 </html>
