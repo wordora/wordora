@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #007BFF;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -17,7 +17,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
+    background-color: #0056b3;
 }
 
 .menu {
@@ -39,7 +39,7 @@ header {
 }
 
 .menu a:hover {
-    background-color: #575757;
+    background-color: #004494;
 }
 
 .hamburger {
@@ -54,7 +54,7 @@ header {
 .dropdown-menu {
     display: none;
     flex-direction: column;
-    background-color: #333;
+    background-color: #0056b3;
     position: absolute;
     top: 50px;
     width: 100%;
@@ -66,7 +66,7 @@ header {
 
 .dropdown-menu li {
     text-align: center;
-    border-top: 1px solid #575757;
+    border-top: 1px solid #004494;
 }
 
 .dropdown-menu a {
@@ -105,7 +105,7 @@ header {
 
 .sidebar ul a {
     text-decoration: none;
-    color: #4CAF50;
+    color: #007BFF;
     font-weight: bold;
 }
 
@@ -129,15 +129,40 @@ header {
 }
 
 h2 {
-    color: #4CAF50;
+    color: #007BFF;
 }
 
 footer {
-    background-color: #333;
+    background-color: #0056b3;
     color: white;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown-menu.show {
+        display: flex;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
 }
