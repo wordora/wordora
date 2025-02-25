@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const dropdownMenu = document.getElementById('dropdownMenu');
-    const mainMenu = document.getElementById('mainMenu');
 
     hamburgerMenu.addEventListener('click', () => {
         dropdownMenu.classList.toggle('show');
-        mainMenu.classList.toggle('show');
     });
 
     document.querySelectorAll('.sidebar a').forEach(anchor => {
