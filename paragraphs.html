@@ -2,76 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paragraphs</title>
-    <style>
-        body {
-            display: flex;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .sidebar {
-            width: 25%;
-            background: #fff;
-            padding: 20px;
-            border-right: 2px solid #ddd;
-            height: 100vh;
-            overflow-y: auto;
-        }
-        .content {
-            width: 75%;
-            padding: 20px;
-        }
-        .paragraph-box {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            display: block;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Paragraph List</h2>
-        <a href="#book-fair">A Book Fair You Visited</a>
-        <a href="#moonlit-night">A Moonlit Night</a>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#book-fair">A Book Fair You Visited</a></li>
+                <li><a href="#moonlit-night">A Moonlit Night</a></li>
+                <!-- Add more list items as needed -->
+            </ul>
+        </div>
+        <div class="main-content">
+            <div id="book-fair" class="paragraph-section">
+                <h2>A Book Fair You Visited</h2>
+                <div class="version">
+                    <h3>150 Words</h3>
+                    <p>Last week, I visited a book fair with my friends...</p>
+                </div>
+                <div class="version">
+                    <h3>200 Words</h3>
+                    <p>Last month, I visited a book fair with my family...</p>
+                </div>
+                <div class="version">
+                    <h3>250 Words</h3>
+                    <p>Last Sunday, I visited a book fair with my best friend...</p>
+                </div>
+            </div>
+            <div id="moonlit-night" class="paragraph-section">
+                <h2>A Moonlit Night</h2>
+                <div class="version">
+                    <h3>150 Words</h3>
+                    <p>A moonlit night is a beautiful sight...</p>
+                </div>
+                <div class="version">
+                    <h3>200 Words</h3>
+                    <p>A moonlit night is a wonderful and peaceful time...</p>
+                </div>
+                <div class="version">
+                    <h3>250 Words</h3>
+                    <p>A moonlit night is one of the most beautiful sights in nature...</p>
+                </div>
+            </div>
+            <!-- Add more paragraph sections as needed -->
+        </div>
     </div>
-    
-    <div class="content">
-        <div id="book-fair" class="paragraph-box">
-            <h2>A Book Fair You Visited (150 Words)</h2>
-            <p>Last week, I visited a book fair with my friends. It was held in a large open field...</p>
-        </div>
-        <div class="paragraph-box">
-            <h2>A Book Fair You Visited (200 Words)</h2>
-            <p>Last month, I visited a book fair with my family. It was held in a big ground...</p>
-        </div>
-        <div class="paragraph-box">
-            <h2>A Book Fair You Visited (250 Words)</h2>
-            <p>Last Sunday, I visited a book fair with my best friend. It was held in a big field near our town...</p>
-        </div>
-
-        <div id="moonlit-night" class="paragraph-box">
-            <h2>A Moonlit Night (150 Words)</h2>
-            <p>A moonlit night is a beautiful sight. The moon shines brightly, making the land look silver...</p>
-        </div>
-        <div class="paragraph-box">
-            <h2>A Moonlit Night (200 Words)</h2>
-            <p>A moonlit night is a wonderful and peaceful time. The moon shines brightly in the sky...</p>
-        </div>
-        <div class="paragraph-box">
-            <h2>A Moonlit Night (250 Words)</h2>
-            <p>A moonlit night is one of the most beautiful sights in nature. When the moon shines brightly...</p>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
