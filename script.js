@@ -1,9 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const dropdownMenu = document.getElementById('dropdownMenu');
+    const mainMenu = document.getElementById('mainMenu');
 
     hamburgerMenu.addEventListener('click', () => {
         dropdownMenu.classList.toggle('show');
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            dropdownMenu.classList.remove('show');
+        }
     });
 
     document.querySelectorAll('.sidebar a').forEach(anchor => {
