@@ -109,7 +109,6 @@ main {
 
 .content-wrapper {
     display: flex;
-    flex-direction: column;
 }
 
 .sidebar {
@@ -169,6 +168,7 @@ main {
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    page-break-inside: avoid;
 }
 
 /* Footer */
@@ -189,16 +189,8 @@ footer {
         top: 50px; /* Adjust position if needed */
     }
 
-    .sidebar {
-        display: none;
-    }
-
     .content-wrapper {
         flex-direction: column;
-    }
-
-    .content {
-        padding: 20px 0;
     }
 
     .sidebar {
@@ -207,5 +199,9 @@ footer {
         top: 0;
         height: auto;
         overflow-y: visible;
+    }
+
+    .content {
+        padding: 20px 0;
     }
 }
