@@ -9,7 +9,7 @@ body, h1, h2, p, ul, li, a {
 
 /* Body Styling */
 body {
-    background-color: #f3f4f6; /* Light Gray */
+    background-color: #3FA2F6; /* Blue background */
     color: #333;
     display: flex;
     flex-direction: column;
@@ -160,6 +160,14 @@ main {
 
 .content-container {
     margin-bottom: 30px;
+}
+
+.page {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
