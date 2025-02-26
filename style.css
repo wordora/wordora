@@ -9,7 +9,7 @@ body, h1, h2, p, ul, li, a {
 
 /* Body Styling */
 body {
-    background-color: #3FA2F6; /* Blue background */
+    background-color: #D9EAFD; /* Light Blue background */
     color: #333;
     display: flex;
     flex-direction: column;
@@ -116,6 +116,10 @@ main {
     background: #f0f4f8;
     padding: 15px;
     border-right: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .sidebar h3 {
@@ -158,16 +162,13 @@ main {
     margin-bottom: 10px;
 }
 
-.content-container {
-    margin-bottom: 30px;
-}
-
 .page {
     background: white;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    page-break-inside: avoid;
 }
 
 /* Footer */
