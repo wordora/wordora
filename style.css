@@ -109,7 +109,6 @@ main {
 
 .content-wrapper {
     display: flex;
-    flex-direction: column;
 }
 
 .sidebar {
@@ -195,11 +194,9 @@ footer {
     }
 
     .sidebar {
-        position: relative;
-        top: 0;
+        width: 100%;
         height: auto;
         overflow-y: visible;
-        width: 100%;
     }
 
     .content {
