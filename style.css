@@ -9,7 +9,7 @@ body, h1, h2, p, ul, li, a {
 
 /* Body Styling */
 body {
-    background-color: #D9EAFD; /* Light Blue background */
+    background-color: #DBEAFE; /* Updated Light Blue background */
     color: #333;
     display: flex;
     flex-direction: column;
@@ -109,6 +109,7 @@ main {
 
 .content-wrapper {
     display: flex;
+    flex-direction: column;
 }
 
 .sidebar {
@@ -194,11 +195,11 @@ footer {
     }
 
     .sidebar {
-        display: block;
         position: relative;
         top: 0;
         height: auto;
         overflow-y: visible;
+        width: 100%;
     }
 
     .content {
